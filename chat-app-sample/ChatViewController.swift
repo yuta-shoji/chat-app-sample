@@ -14,6 +14,7 @@ class ChatViewController: UIViewController {
     override var inputAccessoryView: UIView? {
         if inputContainerView == nil {
             inputContainerView = InputContainerView()
+            inputContainerView.delegate = self
         }
         return inputContainerView
     }

@@ -5,28 +5,35 @@ protocol InputContainerViewDelegate: AnyObject {
 }
 
 class InputContainerView: UIView {
-    let inputTextField = UITextField()
+    var inputTextField: UITextField
     
     let sendButton = UIButton(type: .system)
     
     var delegate: InputContainerViewDelegate?
     
-    init() {
+    override init(frame: CGRect) {
+        inputTextField = UITextField()
         inputTextField.borderStyle = .roundedRect
         
-        super.init()
+        super.init(frame: frame)
+        
         self.autoresizingMask = .flexibleHeight
         self.backgroundColor = .systemYellow
         
-        sendButton.addTarget(self, action: #selector(didTapSend), for: .touchUpInside)
+        inputTextField.delegate = self
+        
         sendButton.setImage(UIImage(systemName: "paperplane"), for: .normal)
+        sendButton.addTarget(self, action: #selector(didTapSend), for: .touchUpInside)
+        
+        self.addSubview(inputTextField)
+        self.addSubview(sendButton)
+        
         sendButton.anchor(
             right: self.trailingAnchor,
             paddingRight: 8,
             width: 50,
             height: 50
         )
-        
         
         inputTextField.anchor(
             top: self.topAnchor,
@@ -38,10 +45,6 @@ class InputContainerView: UIView {
             paddingBottom: 8,
             paddingRight: 8
         )
-        inputTextField.delegate = self
-        
-        self.addSubview(inputTextField)
-        self.addSubview(sendButton)
     }
     
     func clearInputText() {
@@ -50,10 +53,6 @@ class InputContainerView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
     }
     
     override var intrinsicContentSize: CGSize {
