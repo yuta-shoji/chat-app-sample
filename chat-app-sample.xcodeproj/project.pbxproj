@@ -16,7 +16,7 @@
 		3A77F9172980CF4600CEF359 /* chat_app_sampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A77F9162980CF4600CEF359 /* chat_app_sampleUITests.swift */; };
 		3A77F9192980CF4600CEF359 /* chat_app_sampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A77F9182980CF4600CEF359 /* chat_app_sampleUITestsLaunchTests.swift */; };
 		3A77F9262980F8CA00CEF359 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A77F9252980F8CA00CEF359 /* UIView+.swift */; };
-		3A77F928298108F500CEF359 /* InputContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A77F927298108F500CEF359 /* InputContainerView.swift */; };
+		3A77F928298108F500CEF359 /* ChatInputAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A77F927298108F500CEF359 /* ChatInputAccessoryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +50,7 @@
 		3A77F9162980CF4600CEF359 /* chat_app_sampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chat_app_sampleUITests.swift; sourceTree = "<group>"; };
 		3A77F9182980CF4600CEF359 /* chat_app_sampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chat_app_sampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3A77F9252980F8CA00CEF359 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
-		3A77F927298108F500CEF359 /* InputContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputContainerView.swift; sourceTree = "<group>"; };
+		3A77F927298108F500CEF359 /* ChatInputAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInputAccessoryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +103,7 @@
 			children = (
 				3A77F8F52980CF4500CEF359 /* AppDelegate.swift */,
 				3A77F8F72980CF4500CEF359 /* SceneDelegate.swift */,
-				3A77F927298108F500CEF359 /* InputContainerView.swift */,
+				3A77F927298108F500CEF359 /* ChatInputAccessoryView.swift */,
 				3A77F9252980F8CA00CEF359 /* UIView+.swift */,
 				3A77F8F92980CF4500CEF359 /* ChatViewController.swift */,
 				3A77F8FE2980CF4600CEF359 /* Assets.xcassets */,
@@ -262,7 +262,7 @@
 			files = (
 				3A77F9262980F8CA00CEF359 /* UIView+.swift in Sources */,
 				3A77F8FA2980CF4500CEF359 /* ChatViewController.swift in Sources */,
-				3A77F928298108F500CEF359 /* InputContainerView.swift in Sources */,
+				3A77F928298108F500CEF359 /* ChatInputAccessoryView.swift in Sources */,
 				3A77F8F62980CF4500CEF359 /* AppDelegate.swift in Sources */,
 				3A77F8F82980CF4500CEF359 /* SceneDelegate.swift in Sources */,
 			);

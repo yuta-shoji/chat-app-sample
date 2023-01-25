@@ -6,17 +6,12 @@ class ChatViewController: UIViewController {
     
     var messages = [String]()
     
-    
     override var canBecomeFirstResponder: Bool { return true }
-    
-    var inputContainerView: InputContainerView!
-    
+    private var inputContainerView: ChatInputAccessoryView!
     override var inputAccessoryView: UIView? {
-        if inputContainerView == nil {
-            inputContainerView = InputContainerView()
-            inputContainerView.delegate = self
+        get {
+            return inputContainerView
         }
-        return inputContainerView
     }
 
     override func viewDidLoad() {
@@ -24,6 +19,14 @@ class ChatViewController: UIViewController {
         title = "chat"
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellId")
         tableView.dataSource = self
+        
+        inputContainerView = ChatInputAccessoryView(frame: CGRect(
+            x: 0,
+            y: 0,
+            width: view.frame.width,
+            height: 50
+        ))
+        inputContainerView.delegate = self
         
         view = tableView
     }
@@ -41,7 +44,7 @@ extension ChatViewController: UITableViewDataSource {
     }
 }
 
-extension ChatViewController: InputContainerViewDelegate {
+extension ChatViewController: ChatInputAccessoryViewDelegate {
     func didTapSend(text: String) {
         messages.append(text)
         inputContainerView.clearInputText()
